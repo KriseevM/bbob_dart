@@ -193,7 +193,7 @@ class Parser {
     tokenizer = Lexer.create(
       input,
       onToken: (Token token) {
-        bool isAllowedTag = validTags?.contains(token.name) ?? true;
+        bool isAllowedTag = validTags?.contains(token.name.toLowerCase()) ?? true;
 
         if (token.isTag && isAllowedTag) {
           _handleTag(token);
